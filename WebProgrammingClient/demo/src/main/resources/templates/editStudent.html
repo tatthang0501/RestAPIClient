@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" th:object="${student}">
+
+        <table>
+            <tr>
+                <td><p>Tên sinh viên</p> <p th:text="${student.name}"></p></td>
+                <td><input type="text" name="name" id="" placeholder="Nhập tên sinh viên"></td>
+            </tr>
+            <tr>
+                <td><p>Mã sinh viên</p> <p th:text="${student.studentId}"></p></td>
+                <td><input type="text" name="studentId" placeholder="Nhập mã sinh viên"></td>
+            </tr>
+            <tr>
+                <td><p>Ngày tháng năm sinh </p>
+                <p th:text="${student.DOB}"></p></td>
+                <td><input type="date" name="DOB" id=""></td>
+            </tr>
+            <tr>
+                <td><p>Địa chỉ</p> <p th:text="${student.address}"></p></td>
+                <td><input type="text" name="address" placeholder="Nhập địa chỉ"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Sửa">
+        <input type="reset" value="Xóa tất cả" id="">
+    </form>
+</body>
+</html>

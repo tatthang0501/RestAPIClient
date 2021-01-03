@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/student/addStudent}" method="POST">
+        <table>
+            <tr>
+                <td><p>Nhập tên sinh viên</p></td>
+                <td><input type="text" name="name" placeholder="Nhập tên sinh viên"></td>
+            </tr>
+            <tr>
+                <td><p>Nhập mã sinh viên</p></td>
+                <td><input type="text" name="studentId" placeholder="Nhập mã sinh viên"></td>
+            </tr>
+            <tr>
+                <td><p>Nhập ngày sinh</p></td>
+                <td><input type="date" name="DOB" placeholder="Nhập ngày sinh"></td>
+            </tr>
+            <tr>
+                <td><p>Nhập địa chỉ</p></td>
+                <td><input type="text" name="address" placeholder="Nhập địa chỉ"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Thêm">
+    </form>
+</body>
+</html>

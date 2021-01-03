@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form th:action="@{/student/findStudent}" method="POST">
+            <table>
+                <tr>
+                    <td><p th:value="${msg}" th:text="${msg}"></p></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Nhập tên sinh viên</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name" th:value="${studentName}" placeholder="Nhập tên sv cần tìm"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Tìm">
+        </form>
+    </div>
+
+    <div>
+        <form method="POST"></form>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Tên sinh viên</th>
+                <th>Mã sinh viên</th>
+                <th>Ngày sinh</th>
+                <th>Địa chỉ</th>
+                <th>Sửa</th>
+                <th>Xóa</th>
+            </tr>
+            <tr th:each="student: ${students}">
+                <td th:field="${student.id}" th:text="${student.id}" th:value="${student.id}"></td>
+                <td th:field="${student.name}" th:text="${student.name}"></td>
+                <td th:field="${student.studentId}" th:text="${student.studentId}"></td>
+                <td th:field="${student.DOB}" th:text="${student.DOB}"></td>
+                <td th:field="${student.address}" th:text="${student.address}"></td>
+                <td><a th:href="@{/student/editStudent(id=${student.id})}">Sửa</a></td>
+                <td><a th:href="@{/student/deleteStudent(id=${student.id})}">Xóa</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
